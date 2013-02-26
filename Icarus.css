@@ -1,4 +1,5 @@
 /**
+<<<<<<< HEAD
  * Icarus
  * @author: iinterest
  * @version: 1.1.6
@@ -195,4 +196,277 @@ pre code, pre pre{
   border: none!important; 
   border-radius: 0!important; 
   background-color: transparent!important; 
+=======
+ * Icarus Style
+ *
+ * Markdown 中文排版样式
+ *
+ * Icarus 是专为中文排版打造适用于 Markdown 语法的样式表，
+ * 她以 Github 样式为基础，针对汉字排版要求做了细节调整，
+ * 通过 Icarus，我们可以在支持 Markdown 的软件及插件中输出统一的文本样式。
+ *
+ * @version 1.2.0
+ * @author iinterest
+ * @copyright 2004-2013 Bell <www.iinterest.net>
+ */
+
+body{
+	padding: 1em;
+	background: #fefefe;
+	font: 1em/1.6em Helvetica, Arial, "Microsoft YaHei", "微软雅黑";
+	color: #333;
+	cursor: default;
+}
+
+/**
+ * Inline
+ * 行内元素样式
+ * @section inline
+ */
+a{
+	color:#4183c4;
+}
+em{
+	/*斜体中文显示效果较差，改用加粗样式*/
+	font-style:normal;
+	font-weight:bold;
+}
+strong{
+	/*添加符合中文习惯的着重符号*/
+	text-emphasis: circle;
+	-moz-text-emphasis: circle;
+	-o-text-emphasis: circle;
+	-webkit-text-emphasis: circle;
+	text-emphasis-position: under;
+	-moz-text-emphasis-position: under;
+	-o-text-emphasis-position: under;
+	-webkit-text-emphasis-position: under;
+}
+/*在 Markdown 编辑模式中可以使用 ***这里是红色强调文字*** 来增强效果*/
+strong em{
+	color:#ff0000;
+}
+
+/**
+ * Title
+ * 标题样式
+ * @section title
+ */
+h1, h2, h3, h4, h5, h6{ 
+	font-weight: bold;
+}
+h1{ 
+	font-size: 1.8em;
+	text-align: center;
+}
+h2{ 
+	font-size: 1.4em;
+}
+h3{ 
+	font-size: 1.2em;
+}
+h4{ 
+	font-size: 1.0em;
+}
+/*模拟 Github 的 h2 样式*/
+h5{
+	margin: 1em 0;
+	border-bottom: 1px solid #ccc;
+	font-size: 1.4em;
+	line-height: 1.6em;
+}
+/*文字居中显示的 h2 样式*/
+h6{
+	margin: 1em 0;
+	font-size: 1.4em; 
+	text-align: center;
+}
+
+/**
+ * Paragraph
+ * 段落样式
+ * @section paragraph
+ */
+p{
+	margin: 1em 0;
+	/*段落缩进情况复杂，难以控制*/
+	/*text-indent:2em;*/
+	
+	/*两端对齐样式，因对中文支持不好，暂时注释掉*/
+	/*
+	text-align:justify;
+	-webkit-text-justify:inter-ideograph;
+	-moz-text-justify:inter-ideograph;
+	text-justify:inter-ideograph;
+	*/
+}
+ul p,
+li p,
+blockquote p{
+	/*text-indent:0;*/
+}
+li p:last-child{
+	margin:0;
+}
+
+/**
+ * List
+ * 列表样式
+ * @section list
+ */
+ul, ol{ 
+  margin:1em 0 2em; 
+  padding:0 0 0 2em; 
+}
+ul ul{ 
+  margin:0.5em 0;
+}
+ol ol{ 
+  margin:0.5em 0; 
+  list-style:upper-roman; 
+}
+ol ol ol{ 
+  list-style:upper-alpha; 
+}
+li{ 
+  line-height:1.5em;
+}
+
+/**
+ * Blockquote
+ * 引用样式
+ * @section blockquote
+ */
+blockquote{
+	margin:0;
+	padding-left:2em;
+	border-left:0.4em #eee solid;
+	color:#666;
+}
+li>blockquote{
+	margin-top:10px;
+}
+
+/**
+ * Code
+ * 代码样式
+ * @section code
+ */
+pre, code{ 
+	font:13px Consolas, Monaco, Andale Mono, monospace;
+}
+pre{
+	max-width:800px; 
+	padding:0.8em 1.2em; 
+	background-color:#f5f5f5; 
+	border:1px solid #d7d7d7;
+	border-radius:3px;
+	white-space:pre-wrap; 
+	word-wrap:break-word;
+}
+code{ 
+	margin:0 0.5em; 
+	padding:0 0.5em; 
+	background-color:#f8f8f8; 
+	border:1px solid #dedede; 
+	border-radius:2px; 
+	line-height:1.6em;
+}
+pre code, pre pre{ 
+	margin:0;
+	padding:0;
+	background-color: transparent;
+	border:none;
+	border-radius:0;
+}
+
+/**
+ * Separator
+ * 分隔符样式
+ * @section hr
+ */
+hr{ 
+	display:block;
+	height:0;
+	margin:1em 0;
+	padding:0;
+	border:0;
+	border-top:2px dashed #ccc;
+	/*background: url("data:image/gif;base64,R0lGODlhBgAEAIAAAP///8zMzCH5BAAAAAAALAAAAAAGAAQAAAIHhIOXgKFuCgA7");*/
+}
+
+/**
+ * Image
+ * 图片样式
+ * @section img
+ */
+img{
+	display:block;
+	margin:0.2em 0;
+	border:0;
+	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
+}
+
+/**
+ * Table
+ * 表格样式
+ * @section table
+ */
+table{ 
+	border-collapse:collapse; 
+	border-spacing:0; 
+}
+td{ 
+	vertical-align:top;
+}
+table th, 
+table td, 
+th, td {
+	border:1px solid #d7d7d7;
+	padding:5px 10px;
+}
+table th, th {
+	background:#f8f8f8;
+	white-space:nowrap;
+}
+table thead th, 
+thead th {
+	background:#f8f8f8;
+}
+
+/**
+ * Media
+ * 响应式样式
+ * @section media
+ */
+/*@media only screen and (min-width: 480px) {
+	body{font-size:14px;}
+}
+@media only screen and (min-width: 768px) {
+	body{font-size:16px;}
+}*/
+
+/**
+ * Thunderbird
+ * 覆盖雷鸟客户端内置样式
+ * @section thunderbird
+ */
+a:link{ 
+	color:#4183C4!important;
+}
+h2{ 
+	border:none!important;
+}
+li{ 
+	margin:0!important; 
+	padding:0!important; 
+	line-height:1.5em!important;
+}
+pre code, pre pre{ 
+	margin:0!important;
+	padding:0!important;
+	border:none!important;
+	background-color:transparent!important; 
+>>>>>>> 调整了 blockquote 在 li 中外边距；增加了 strong 标签的中文强调样式；新增开发样式：icarus.css
 }
