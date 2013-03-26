@@ -7,7 +7,7 @@
  * 她以 Github 样式为基础，针对汉字排版要求做了细节调整，
  * 通过 Icarus，我们可以在支持 Markdown 的软件及插件中输出统一的文本样式。
  *
- * @version 1.2.0
+ * @version 1.2.2
  * @author iinterest
  * @copyright 2004-2013 Bell <www.iinterest.net>
  */
@@ -28,12 +28,11 @@ body{
 a{
 	color:#4183c4;
 }
-em{
-	/*斜体中文显示效果较差，改用加粗样式*/
-	font-style:normal;
-	font-weight:bold;
-}
-strong{
+em{}
+strong{}
+/*在 Markdown 编辑模式中可以使用 ***这里是红色强调文字*** 来增强效果*/
+strong em{
+	color:#ff0000;
 	/*添加符合中文习惯的着重符号*/
 	text-emphasis: circle;
 	-moz-text-emphasis: circle;
@@ -44,10 +43,6 @@ strong{
 	-o-text-emphasis-position: under;
 	-webkit-text-emphasis-position: under;
 }
-/*在 Markdown 编辑模式中可以使用 ***这里是红色强调文字*** 来增强效果*/
-strong em{
-	color:#ff0000;
-}
 
 /**
  * Title
@@ -56,6 +51,9 @@ strong em{
  */
 h1, h2, h3, h4, h5, h6{ 
 	font-weight: bold;
+}
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong{
+	font-variant:small-caps;
 }
 h1{ 
 	font-size: 1.8em;
